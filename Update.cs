@@ -193,10 +193,9 @@ public class Update
             {
                 Console.WriteLine($"{classroom.Id}- {classroom.Name}");
             }
-
-            var inputSelection = Console.ReadLine();
+            
             var classroomId = int.Parse(Console.ReadLine());
-            var classroomToUpdate = DbHelper.GetClassrooms().FirstOrDefault(x => x.Id == classroomId);
+            var classroomToUpdate = dbContext.Classrooms.FirstOrDefault(x => x.Id == classroomId);
             Console.Clear();
             Console.Write("Enter new Class Name: (Press enter to keep current.) :");
             var newName = Console.ReadLine();

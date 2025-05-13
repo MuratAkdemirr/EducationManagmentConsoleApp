@@ -22,7 +22,7 @@ public class Helper
         {
             throw new ArgumentException($"{nameof(options)} içinde seçenekler olmalı.", nameof(options));
         }
-
+         
         Console.WriteLine(question);
 
         for (int i = 0; i < options.Length; i++)
