@@ -18,7 +18,7 @@ public class Delete
             foreach (var teacher in teachers)
             {
                 Console.WriteLine(
-                    $"{teacher.Id}- {teacher.FirstName} {teacher.LastName},{teacher.Birthday:dd/MM/yyyy},{teacher.Gender},{teacher.Classroom}");
+                    $"{teacher.Id}- {teacher.FirstName} {teacher.LastName},{teacher.Birthday:dd/MM/yyyy},{teacher.Gender},{teacher.Classrooms}");
             }
 
             var inputSelection = Console.ReadLine();
@@ -52,7 +52,7 @@ public class Delete
             foreach (var student in students)
             {
                 Console.WriteLine(
-                    $"{student.Id}- {student.FirstName} {student.LastName},{student.Birthday:dd/MM/yyyy},{student.Gender},{student.Classroom}");
+                    $"{student.Id}- {student.FirstName} {student.LastName},{student.Birthday:dd/MM/yyyy},{student.Gender},{student.Classrooms}");
             }
 
             var inputSelection = Console.ReadLine();
@@ -86,7 +86,7 @@ public class Delete
             foreach (var clasroom in classrooms)
             {
                 Console.WriteLine($"{clasroom.Id}- {clasroom.Name}");
-
+    
                 var inputSelection = Console.ReadLine();
                 var classroomId = int.Parse(inputSelection);
                 var classroomToDelete = classrooms.FirstOrDefault(x => x.Id == classroomId);
@@ -95,7 +95,7 @@ public class Delete
                     dbContext.Remove(classroomToDelete);
                     dbContext.SaveChanges();
                 }
-
+    
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("The Classroom was deleted..");
                 Console.ResetColor();

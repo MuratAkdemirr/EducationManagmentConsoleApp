@@ -7,7 +7,8 @@ public class Teacher
     public string LastName { get; set; }
     public DateOnly Birthday { get; set; }
     public string Gender { get; set; }
-    public string Classroom { get; set; }
+
+    public ICollection<Classroom> Classrooms { get; set; } = new List<Classroom>();
     
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 }

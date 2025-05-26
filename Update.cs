@@ -12,14 +12,13 @@ public class Update
     {
         try
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Update Teacher");
             Console.WriteLine("Choose a Teacher Id To Update");
             var teachers0 = DbHelper.GetTeachers();
             foreach (var teacher in teachers0)
             {
                 Console.WriteLine(
-                    $"{teacher.Id}- {teacher.FirstName} {teacher.LastName},{teacher.Birthday:dd/MM/yyyy},{teacher.Gender},{teacher.Classroom}");
+                    $"{teacher.Id}- {teacher.FirstName} {teacher.LastName},{teacher.Birthday:dd/MM/yyyy},{teacher.Gender}");
             }
 
             var inputSelection = Console.ReadLine();
@@ -38,8 +37,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Last Name: (Press enter to keep current.) :");
             var newLastName = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newLastName))
@@ -51,8 +49,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Birth Date(dd.MM.yyyy): (Press enter to keep current.) :");
             var newBirthDay = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newBirthDay))
@@ -64,8 +61,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Gender: (Press enter to keep current.) :");
             var newGender = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newGender))
@@ -74,14 +70,14 @@ public class Update
                 dbContext.SaveChanges();
             }
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("Enter new Classroom: (Press enter to keep current.) :");
-            var newClassroom = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(newClassroom))
-            {
-                teacherToUpdate.Classroom = newClassroom;
-                dbContext.SaveChanges();
-            }
+            // Console.ForegroundColor = ConsoleColor.DarkYellow;
+            // Console.Write("Enter new Classroom: (Press enter to keep current.) :");
+            // var newClassroom = Console.ReadLine();
+            // if (!string.IsNullOrWhiteSpace(newClassroom))
+            // {
+            //     teacherToUpdate.Classrooms = newClassroom;
+            //     dbContext.SaveChanges();
+            // }
         }
         catch (Exception e)
         {
@@ -94,14 +90,13 @@ public class Update
     {
         try
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Update Student");
             Console.WriteLine("Choose a Student Id To Update");
             var students0 = DbHelper.GetStudents();
             foreach (var student in students0)
             {
                 Console.WriteLine(
-                    $"{student.Id}- {student.FirstName} {student.LastName},{student.Birthday:dd/MM/yyyy},{student.Gender},{student.Classroom}");
+                    $"{student.Id}- {student.FirstName} {student.LastName},{student.Birthday:dd/MM/yyyy},{student.Gender}");
             }
 
             var inputSelection = Console.ReadLine();
@@ -120,8 +115,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Last Name: (Press enter to keep current.) :");
             var newLastName = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newLastName))
@@ -133,8 +127,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Birth Date(dd.MM.yyyy): (Press enter to keep current.) :");
             var newBirthDay = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newBirthDay))
@@ -146,8 +139,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
             Console.Write("Enter new Gender: (Press enter to keep current.) :");
             var newGender = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(newGender))
@@ -159,20 +151,7 @@ public class Update
                 Console.ResetColor();
                 Thread.Sleep(750);
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("Enter new Classroom: (Press enter to keep current.) :");
-            var newClassroom = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(newClassroom))
-            {
-                studentToUpdate.Classroom = newClassroom;
-                dbContext.SaveChanges();
-            }
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Classroom has changed sucessfully");
-            Console.ResetColor();
-            Thread.Sleep(750);
+            
         }
         catch (Exception e)
         {
@@ -185,7 +164,6 @@ public class Update
     {
         try
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Update Classroom");
             Console.WriteLine("Choose a Classroom Id To Update | Exit(0).");
             var classrooms = DbHelper.GetClassrooms();
